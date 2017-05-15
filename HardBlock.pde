@@ -13,6 +13,7 @@ class HardBlock extends Block {
           ball.y_direction *= -1;
           sound_effect2();
           hit_point -= 1;
+          ball.score += 100;
     }
     
     // block下部
@@ -21,6 +22,7 @@ class HardBlock extends Block {
           ball.y_direction *= -1;
           sound_effect2();
           hit_point -= 1;
+          ball.score += 100;
     }
     
     // block左
@@ -29,6 +31,7 @@ class HardBlock extends Block {
           ball.x_direction *= -1;
           sound_effect2();
           hit_point -= 1;
+          ball.score += 100;
     }
     
     // block右
@@ -37,6 +40,7 @@ class HardBlock extends Block {
           ball.x_direction *= -1;
           sound_effect2();
           hit_point -= 1;
+          ball.score += 100;
     }
   }
   

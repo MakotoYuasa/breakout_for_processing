@@ -5,14 +5,15 @@ class Ball {
   float y; // y座標
   int r; // ボールの半径
   int life = 2; // 残機
+  int score = 0; // 点数
   
   // ボールの方向
   int x_direction = 1;
   int y_direction = 1;
   
   // ボールの速さ
-  float x_speed = 2.55;
-  float y_speed = 3.35;
+  float x_speed = 2.45;
+  float y_speed = 3.0;
   
   // コンストラクタ
   Ball(float xpos, float ypos, int rad, int l) {

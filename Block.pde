@@ -19,6 +19,7 @@ class Block {
           ball.y_direction *= -1;
           sound_effect2();
           hit_point -= 1;
+          ball.score += 100;
     }
     
     // block下部
@@ -27,6 +28,7 @@ class Block {
           ball.y_direction *= -1;
           sound_effect2();
           hit_point -= 1;
+          ball.score += 100;
     }
     
     // block左
@@ -35,6 +37,7 @@ class Block {
           ball.x_direction *= -1;
           sound_effect2();
           hit_point -= 1;
+          ball.score += 100;
     }
     
     // block右
@@ -43,11 +46,12 @@ class Block {
           ball.x_direction *= -1;
           sound_effect2();
           hit_point -= 1;
+          ball.score += 100;
     }
   }
 
   void display() {
-    fill(#00FF00);
+    fill(#43FF57);
     rect(x,y,x_len,y_len);
     hit_hantei();
     noFill();
