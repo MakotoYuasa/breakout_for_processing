@@ -14,4 +14,12 @@ void gameinfo() {
   text("score ", 80, height-10);
   text(t, 145, height-10);
   noFill();
+  
+  // GameOverの表示
+  if(ball.life <= 0) {
+    fill(255); // color:white
+    textSize(30);
+    text("Game over!", width/4, height/2);
+    noFill();
+  }
 }

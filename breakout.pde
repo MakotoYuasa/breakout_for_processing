@@ -81,13 +81,6 @@ void keyPressed() {
       case RIGHT:
         if(racket.x + racket.x_len < width) racket.x += 16;
         break;
-       /*
-      case RETURN:
-        //ボールに速度を与える
-        ball.x = 2;
-        ball.y = 5;
-        break;
-      */
     }
   }
 }
