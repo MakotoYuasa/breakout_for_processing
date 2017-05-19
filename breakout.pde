@@ -1,14 +1,34 @@
+import processing.opengl.*; //OPENGL
+
+int NUM = 5000;
+float[] x = new float[NUM];
+float[] y = new float[NUM];
+float[] z = new float[NUM];
+color[] col = new color[NUM];
+
 Racket racket;
 Ball ball;
 Block[] block;
 HardBlock[] hardblock;
 
 void setup() {
-  size(400,500); // 画面サイズ
-  noStroke();
+  size(400,500,OPENGL); // 画面サイズ
+  
+  colorMode(HSB,360,100,100,100);
+  frameRate(60);
+  noFill();
+  stroke(200,100,100);
+  smooth();
+  
+  for(int i=0; i<NUM; i++) {
+    x[i] = random(width);
+    y[i] = random(height);
+    z[i] = random(-5000,0);
+    col[i] = color(random(200,240), random(50,100),random(100));
+  }
   
   racket = new Racket(200, 450, 100, 10);
-  ball = new Ball(200, 190, 10, 3);
+  ball = new Ball(200, 190, 10, 3, 0);
   
   // blockの準備
   int block_x = 60, block_y = 10;
@@ -44,7 +64,15 @@ void setup() {
 
 // 描画関数
 void draw() {
-  background(40); // 背景色:黒
+  background(0); // 背景色:黒
+  
+  // 背景
+  for(int i=0; i<NUM; i++) {
+    stroke(color(col[i]));
+    line(x[i],y[i],z[i],x[i],y[i],z[i]+100);
+    z[i] += 20;
+    if(z[i]>100) z[i] -= 5000;
+  }
   
   racket.display();
   

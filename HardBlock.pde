@@ -47,7 +47,7 @@ class HardBlock extends Block {
   void display() {
     // 耐久力でブロックの色を変える
     if(hit_point == 1) fill(#43FF57);
-    if(hit_point >= 2) fill(#136FFF);
+    if(hit_point >= 2) fill(#FF0000);
     rect(x,y,x_len,y_len);
     hit_hantei();
     noFill();

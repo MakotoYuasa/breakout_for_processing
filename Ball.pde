@@ -16,11 +16,12 @@ class Ball {
   float y_speed = 3.0;
   
   // コンストラクタ
-  Ball(float xpos, float ypos, int rad, int l) {
+  Ball(float xpos, float ypos, int rad, int l, int p) {
     x = xpos;
     y = ypos;
     r = rad;
     life = l;
+    score = p;
   }
   
   // 描画関数
@@ -42,7 +43,7 @@ class Ball {
     if(y > height-r) {
       life -= 1;
       // lifeがまだ残っているなら生成する
-      ball = new Ball(200, 200, 10, life);
+      ball = new Ball(200, 200, 10, life, score);
       sound_effect3();
     }
     
